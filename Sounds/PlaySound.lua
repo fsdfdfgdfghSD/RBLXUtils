@@ -3,7 +3,7 @@ function Played(Sound: Sound, Callback: () -> ())
 	Callback()
 end
 
-return function(SoundId: number, SoundName: string, Location)
+return function(SoundId: number, SoundName: string, Location) -- Creates a sound and plays it in the given location, good incase you want to play the same sound faster than the sound's timelength.
 	local Sound = Instance.new("Sound")
 	Sound.Parent = Location
 	Sound.Name = SoundName
