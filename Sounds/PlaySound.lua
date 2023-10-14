@@ -3,9 +3,9 @@ function Played(Sound: Sound, Callback: () -> ())
 	Callback()
 end
 
-return function(SoundId: number, SoundName: string)
+return function(SoundId: number, SoundName: string, Location)
 	local Sound = Instance.new("Sound")
-	Sound.Parent = workspace:WaitForChild("Sounds")
+	Sound.Parent = Location
 	Sound.Name = SoundName
 	Sound.SoundId = "rbxassetid://"..tostring(SoundId)
 
