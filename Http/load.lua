@@ -12,5 +12,7 @@ return function(url: string) -- Taks an argument as "string" and it extracts the
 		local data = HttpService:JSONDecode(result)
 
 		return data
+	else
+		warn(result)
 	end
 end
