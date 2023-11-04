@@ -19,15 +19,28 @@ GamePassService._VERSION = "GamePassService 1.0"
 -- Returns true if the player owns the given pass id, or an error if UserOwnsGamePassAsync didnt succeed.
 
 function GamePassService:PlayerOwnsPass(UserId: number, PassId: number): boolean
-	local Success, Result = pcall(function()
-		return MarketPlaceService:UserOwnsGamePassAsync(UserId, PassId)
-	end)
+	local Success = nil
+	local Result = nil
+	local Attempts = 1
 	
-	if not Success then
-		error(Result)
+	repeat
+		Success, Result = pcall(function()
+			return MarketPlaceService:UserOwnsGamePassAsync(UserId, PassId)
+		end)
+		
+		Attempts += 1
+		
+		if not Success then
+			warn(Result)
+			task.wait(3)
+		end
+	until Success or Attempts == 5
+	
+	if Success then
+		return Result
+	else
+		error("Error, Can't check if \""..UserId.."\" owns \""..PassId.."\"")
 	end
-	
-	return Result
 end
 
 -- Returns a big table with all of the info of the given pass id.
