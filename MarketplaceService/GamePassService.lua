@@ -5,7 +5,7 @@
 	Description: a useless gamepass service with simpler functions to use.
 	
 	License: MIT
-	Version: GamePassService 1.0
+	Version: GamePassService 1.2
 	
 ]]--
 
@@ -14,7 +14,7 @@ local MarketPlaceService = game:GetService("MarketplaceService")
 type table = {[any]: any?}
 
 local GamePassService = {}
-GamePassService._VERSION = "GamePassService 1.0"
+GamePassService._VERSION = "GamePassService 1.2"
 
 -- Returns true if the player owns the given pass id, or an error if UserOwnsGamePassAsync didnt succeed.
 
