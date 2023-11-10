@@ -1,3 +1,5 @@
+-- TODO: Add emoji flags
+
 return {
 	["US"] = { Name = "United States", Emoji = "🇺🇸" },
 	["UK"] = { Name = "United Kingdom", Emoji = "🇬🇧" },
