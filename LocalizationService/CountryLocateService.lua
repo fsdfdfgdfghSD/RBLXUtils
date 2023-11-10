@@ -1,4 +1,4 @@
---!nocheck
+--!strict
 
 --[[
 
@@ -7,31 +7,81 @@
 	Description: List of some useful functions to expand the Localization service.
 	
 	License: MIT
-	Version: CountryLocateService 1.0
-
+	Version: CountryLocateService 1.5
+	
+	API Documentation: {
+	
+		1. GetCountryForPlayer()
+		
+		-> Returns the given player's country data: Emoji, Name
+		
+		Parameters:
+		[Player: Instance]
+		
+		Returns:
+		[string]
+		
+		2. GetMyCountry()
+		
+		-> Returns the local player's country data: Emoji, Name
+		Function must be used on the client.
+		
+		Returns:
+		[string]
+		
+		3. GetCountryNameByCode()
+		
+		-> Returns the country name from the given country code.
+		
+		Parameters:
+		[CountryCode: string]
+		
+		Returns:
+		[string]
+		
+		4. GetCountryCodeByName()
+		
+		-> Returns the country code from the given name
+		
+		Parameters:
+		[CountryName: string]
+		
+		Returns:
+		[string]
+		
+		5. AddCountryToList()
+		
+		-> Adds a country with the: Code, Name, Emoji to the "Countries" list.
+		
+		Parameters:
+		[Code: string]
+		[Name: string]
+		[Emoji: string]
+		
+		6. GetAllCountries()
+		
+		-> Returns all of the countries in a table representation.
+		
+		Returns:
+		[Country: {[string]: Name: string, Emoji: string}]
+		
+		7. RandomCountry()
+		
+		-> Returns a random country from the countries table.
+		
+		Returns:
+		[CountryData: {Name: string, Emoji: string}]
+	}
 ]]--
 
 local LocalizationService = game:GetService("LocalizationService")
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 
-local Countries = require(script.parent.Countries)
-
-export type Country = {[string]: {Name: string, Emoji: string}} -- Custom country type.
-
---[[
-
-	How to check if something's a country:
-
-	local MyCountry: CountryService.Country = {["A"] = {Name = "B", Emoji = "C"}}
-
-]]--
-
-type table = {[any]: any?}
+local Countries = require(script.Countries)
+local Types = require(script.Types)
 
 local CountryLocateService = { _VERSION = "CountryLocateService 1.0" }
-
--- Returns the given player's country data: Emoji, Name
 
 function CountryLocateService:GetCountryForPlayer(Player: Player): string?
 	local Success: boolean = nil
@@ -58,9 +108,7 @@ function CountryLocateService:GetCountryForPlayer(Player: Player): string?
 	return Result
 end
 
--- Returns the local player's country data: Emoji, Name
-
-function CountryLocateService:GetMyCountry()
+function CountryLocateService:GetMyCountry(): string
 	if RunService:IsServer() then
 		return error("GetMyCountry() cannot be called from the server.")
 	end
@@ -68,10 +116,8 @@ function CountryLocateService:GetMyCountry()
 	return self:GetCountryForPlayer(Players.LocalPlayer)
 end
 
--- Returns the country name from the given country code.
-
 function CountryLocateService:GetCountryNameByCode(CountryCode: string): string
-	for Code, Data in pairs(Countries) do
+	for Code: string, Data: Types.CountryData in pairs(Countries) do
 		if Code == CountryCode then
 			return Data.Name
 		end
@@ -80,41 +126,33 @@ function CountryLocateService:GetCountryNameByCode(CountryCode: string): string
 	return error("Country code: \""..CountryCode.."\" not found.")
 end
 
--- Returns the country code from the given name
-
 function CountryLocateService:GetCountryCodeByName(CountryName: string): string
-	for Code, Data in pairs(Countries) do
+	for Code: string, Data: Types.CountryData in pairs(Countries) do
 		if Data.Name == CountryName then
 			return Code
 		end
 	end
 	
-	return error("Country: \""..CountryName.."\" not found.")
+	return error("Country name: \""..CountryName.."\" not found.")
 end
 
--- Adds a country with the: Code, Name, Emoji to the "Countries" list.
-
-function CountryLocateService:AddCountryToList(Code: string, Name: string, Emoji: string)
+function CountryLocateService:AddCountryToList(Code: string, Name: string, Emoji: string): ()
 	if Code and Name and Emoji then
 		Countries[Code] = {["Name"] = Name, ["Emoji"] = Emoji}
 	else
-		return error("Please provide the country name and code.")
+		return error("Please provide the country code, name and emoji.")
 	end
 end
 
--- Returns all of the countries in a table.
-
-function CountryLocateService:GetAllCountries(): Country
+function CountryLocateService:GetAllCountries(): Types.Country
 	return Countries
 end
 
--- Returns a random country data sample.
-
-function CountryLocateService:CountrySample(): {Emoji: string, Name: string}
-	local CountryListSample: table = {}
+function CountryLocateService:RandomCountry(): Types.CountryData?
+	local CountryListSample: Types.table = {}
 	
-	for _, CountryData: table in pairs(Countries) do
-		table.insert(CountryListSample, CountryData)
+	for _, Data: Types.CountryData in pairs(Countries) do
+		table.insert(CountryListSample, Data)
 	end
 	
 	return CountryListSample[math.random(1, #CountryListSample)]
