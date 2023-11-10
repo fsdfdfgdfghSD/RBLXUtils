@@ -78,8 +78,8 @@ local LocalizationService = game:GetService("LocalizationService")
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 
-local Countries = require(script.Countries)
-local Types = require(script.Types)
+local Countries = require(script.Parent.Countries)
+local Types = require(script.Parent.Types)
 
 local CountryLocateService = { _VERSION = "CountryLocateService 1.0" }
 
