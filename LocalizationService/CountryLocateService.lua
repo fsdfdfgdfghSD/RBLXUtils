@@ -81,7 +81,7 @@ local Players = game:GetService("Players")
 local Countries = require(script.Parent.Countries)
 local Types = require(script.Parent.Types)
 
-local CountryLocateService = { _VERSION = "CountryLocateService 1.0" }
+local CountryLocateService = { _VERSION = "CountryLocateService 1.5" }
 
 function CountryLocateService:GetCountryForPlayer(Player: Player): string?
 	local Success: boolean = nil
