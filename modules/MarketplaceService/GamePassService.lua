@@ -4,7 +4,7 @@
 
 	Name: GamePassService.lua
 	Author: netheround
-	Description: a useless gamepass service with simpler functions to use.
+	Description: List of some useful functions to expand the GamePassService service.
 	
 	License: MIT
 	Version: GamePassService 1.3
