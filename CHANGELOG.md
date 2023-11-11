@@ -4,9 +4,14 @@
 - Added error handling with attempts for MarketplaceService/GamePassService.lua
 - Added CountryLocateService can be found in LocalizationService/CountryLocateService.lua
 
-## 11/11/2023:
+## 10/11/2023:
 - Added a new folder with the types + better documentation for them
 - Added better documentation for LocalizationService/CountryLocateService.lua
 - Added one new type "CountryData": LocalizationService/Types.lua
 - Set LocalizationService/CountryLocateService.lua to --!strict mode + fixed a type checking error.
 - Changed "CountrySample" function to "RandomCountry" in LocalizationService/Types.lua
+
+## 11/11/2023:
+- Added --!strict mode for MarketplaceService/GamePassService.lua
+- Added more type checking for MarketplaceService/GamePassService.lua
+- Better documentation for MarketplaceService/GamePassService.lua
