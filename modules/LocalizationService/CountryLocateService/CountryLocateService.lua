@@ -4,7 +4,7 @@
 
 	Name: CountryLocateService.lua
 	Author: netheround
-	Description: List of some useful functions to expand the Localization service.
+	Description: List of some useful functions to expand the LocalizationService service.
 	
 	License: MIT
 	Version: CountryLocateService 1.5
