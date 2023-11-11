@@ -15,3 +15,10 @@
 - Added --!strict mode for MarketplaceService/GamePassService.lua
 - Added more type checking for MarketplaceService/GamePassService.lua
 - Better documentation for MarketplaceService/GamePassService.lua
+
+## 12/11/2023:
+- Http/load.lua renamed to "LoadJsonData.lua"
+- Added --!strict mode + type checking for LoadJsonData.lua
+- Better README.md file.
+- Added a doc directory
+- Clearer repo, organized it added a modules folder as well.
