@@ -4,14 +4,21 @@
 
 	Name: CountryLocateService.lua
 	Author: netheround
-	Description: List of some useful functions to expand the LocalizationService service.
+	Description: List of some useful functions to expand the Localization service.
 	
 	License: MIT
-	Version: CountryLocateService 1.5
+	Version: CountryLocateService 1.6
 	
 	API Documentation: {
 	
-		1. GetCountryForPlayer()
+		1. new()
+		
+		-> Creating a country to add it in the countries table using the AddCountryToList() method.
+		
+		Parameters:
+		[NewData: {Code: string, Name: string, Emoji: string}]
+	
+		2. GetCountryForPlayer()
 		
 		-> Returns the given player's country data: Emoji, Name
 		
@@ -21,7 +28,7 @@
 		Returns:
 		[string]
 		
-		2. GetMyCountry()
+		3. GetMyCountry()
 		
 		-> Returns the local player's country data: Emoji, Name
 		Function must be used on the client.
@@ -29,7 +36,7 @@
 		Returns:
 		[string]
 		
-		3. GetCountryNameByCode()
+		4. GetCountryNameByCode()
 		
 		-> Returns the country name from the given country code.
 		
@@ -39,7 +46,7 @@
 		Returns:
 		[string]
 		
-		4. GetCountryCodeByName()
+		5. GetCountryCodeByName()
 		
 		-> Returns the country code from the given name
 		
@@ -49,23 +56,21 @@
 		Returns:
 		[string]
 		
-		5. AddCountryToList()
+		6. AddCountryToList()
 		
 		-> Adds a country with the: Code, Name, Emoji to the "Countries" list.
 		
 		Parameters:
-		[Code: string]
-		[Name: string]
-		[Emoji: string]
+		[Country: self]
 		
-		6. GetAllCountries()
+		7. GetAllCountries()
 		
 		-> Returns all of the countries in a table representation.
 		
 		Returns:
 		[Country: {[string]: Name: string, Emoji: string}]
 		
-		7. RandomCountry()
+		8. RandomCountry()
 		
 		-> Returns a random country from the countries table.
 		
@@ -78,10 +83,27 @@ local LocalizationService = game:GetService("LocalizationService")
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 
-local Countries = require(script.Parent.Countries)
-local Types = require(script.Parent.Types)
+local Countries = require(script.Countries)
+local Types = require(script.Types)
 
-local CountryLocateService = { _VERSION = "CountryLocateService 1.5" }
+local CountryLocateService = { _VERSION = "CountryLocateService 1.6" }
+CountryLocateService.__index = CountryLocateService
+
+type self = {
+	Code: string,
+	Name: string,
+	Emoji: string
+}
+
+function CountryLocateService.new(NewData)
+	local self = setmetatable(NewData or {}, CountryLocateService)
+	
+	self.Code = self.Code or "N/A"
+	self.Name = self.Name or "N/A"
+	self.Emoji = self.Emoji or "N/A"
+	
+	return self
+end
 
 function CountryLocateService:GetCountryForPlayer(Player: Player): string?
 	local Success: boolean = nil
@@ -136,11 +158,11 @@ function CountryLocateService:GetCountryCodeByName(CountryName: string): string
 	return error("Country name: \""..CountryName.."\" not found.")
 end
 
-function CountryLocateService:AddCountryToList(Code: string, Name: string, Emoji: string): ()
-	if Code and Name and Emoji then
-		Countries[Code] = {["Name"] = Name, ["Emoji"] = Emoji}
+function CountryLocateService:AddCountryToList(Country: self): ()
+	if Country then
+		Countries[self.Code] = {["Name"] = self.Name, ["Emoji"] = self.Emoji}
 	else
-		return error("Please provide the country code, name and emoji.")
+		return error("Please provide the country data: code, name, emoji")
 	end
 end
 
