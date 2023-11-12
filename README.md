@@ -1,5 +1,5 @@
 <h1 align="center">RBLXUtils</h1>
-<p align="center">List of some useful roblox utils that i use when making my games!</p>
+<p align="center">List of some useful roblox utils i use when making my games!</p>
 
 <hr>
 
