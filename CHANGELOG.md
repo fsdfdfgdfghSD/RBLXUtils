@@ -23,6 +23,11 @@
 - Added a doc directory
 - Clearer repo, organized it added a modules folder as well.
 
-- Added type checking + --!strict mode for RagdollService
+**RagdollEngine/RagdollService.lua : Version: 1.1**
+
+- Added type checking + --!strict mode for RagdollEngine/RagdollService.lua
 - Added documentation for it + Version
 - Added so when unragdolling a character you set the walkspeed/jumppower (optional)
+
+**RagdollEngine/RagdollService.lua : Version: 1.2**
+- Fixed 2 type checking bug in RagdollEngine/RagdollService.lua
