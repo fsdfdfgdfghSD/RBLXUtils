@@ -17,7 +17,6 @@
 		
 		-> Ragdolls the given characters + changes the WalkSpeed/JumpPower to 0.
 		
-		
 		Parameters:
 		[Character: Model]
 		
