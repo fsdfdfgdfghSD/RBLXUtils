@@ -9,7 +9,7 @@
 	Description: Nice ragdolling module that works with both R6/R15
 	
 	License: MIT
-	Version: RagdollService 1.1
+	Version: RagdollService 1.2
 	
 	API Documentation: {
 	
