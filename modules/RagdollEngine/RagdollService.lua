@@ -43,13 +43,13 @@
 
 ]]--
 
-local RagdollService = { _VERSION = "RagdollService 1.1" }
+local RagdollService = { _VERSION = "RagdollService 1.2" }
 
 function RagdollService:RagdollCharacter(Character): ()
 	local Humanoid: Humanoid? = Character:FindFirstChild("Humanoid")
 		
 	if Humanoid then
-		for _, Joint: any in Character:GetDescendants() do
+		for _, Joint in Character:GetDescendants() do
 			if Joint:IsA("Motor6D") then
 				local Socket: BallSocketConstraint = Instance.new("BallSocketConstraint")
 				local Attachment0: Attachment = Instance.new("Attachment")
@@ -81,16 +81,13 @@ function RagdollService:RagdollCharacter(Character): ()
 	end
 end
 
-function RagdollService:UnragdollCharacter(Character, WalkSpeed: number, JumpPower: number): ()
-	WalkSpeed = WalkSpeed or 16
-	JumpPower = JumpPower or 50
-	
+function RagdollService:UnragdollCharacter(Character, WalkSpeed: number?, JumpPower: number?): ()
 	local Humanoid: Humanoid? = Character:WaitForChild("Humanoid")
 
 	if Humanoid then
 		Humanoid.PlatformStand = false
 
-		for _, Joint: any in Character:GetDescendants() do
+		for _, Joint in Character:GetDescendants() do
 			if Joint:IsA("BallSocketConstraint") then
 				Joint:Destroy()
 			end
@@ -102,15 +99,15 @@ function RagdollService:UnragdollCharacter(Character, WalkSpeed: number, JumpPow
 
 		Humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
 
-		Humanoid.WalkSpeed = WalkSpeed
-		Humanoid.JumpPower = JumpPower
+		Humanoid.WalkSpeed = WalkSpeed or 16
+		Humanoid.JumpPower = JumpPower or 50
 
 		Humanoid.AutoRotate = true
 	end
 end
 
 function RagdollService:IsRagdolled(Character): boolean
-	for _, Joint: any in Character:GetDescendants() do
+	for _, Joint in Character:GetDescendants() do
 		if Joint:IsA("BallSocketConstraint") then
 			return true
 		end
