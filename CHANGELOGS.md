@@ -36,3 +36,8 @@
 - Added a new function ".new()" a way of creating your countries that can be added to the countries table through the AddCountryToList() method.
   
 - Added `examples` folder which i will work on it soon.
+
+## 16/11/2023:
+
+- Fixed a type checking bug in MarketplaceService/GamePassService.lua
+> TODOS: You probably seen some todos in my script, im gonna work on them soon.
