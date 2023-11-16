@@ -4,7 +4,7 @@
 
 	Name: GamePassService.lua
 	Author: netheround
-	Description: List of some useful functions to expand the GamePassService service.
+	Description: a useless gamepass service with simpler functions to use.
 	
 	License: MIT
 	Version: GamePassService 1.3.1
@@ -49,9 +49,9 @@ type table = {[any]: any?}
 
 local GamePassService = { _VERSION = "GamePassService 1.3.1" }
 
-function GamePassService:PlayerOwnsPass(UserId: number, PassId: number): boolean
+function GamePassService:PlayerOwnsPass(UserId: number, PassId: number): boolean | string?
 	local Success: boolean = nil
-	local Result: boolean? | string? = nil
+	local Result: boolean | string? = nil
 	local Attempts: number = 1
 
 	repeat
