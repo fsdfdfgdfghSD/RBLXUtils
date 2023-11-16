@@ -33,7 +33,7 @@
 - Fixed 2 type checking errors in `RagdollEngine/RagdollService.lua`
 
 **LocalizationService/CountryLocateService/CountryLocateService.lua : Version: 1.6**
-- Added a new function ".new()" a way of creating your countries that can be added to the countries table through the AddCountryToList() method.
+- Added a new function ".new()" a clearer way of creating your countries that can be added to the countries table through the AddCountryToList() method.
   
 - Added `examples` folder which i will work on it soon.
 
