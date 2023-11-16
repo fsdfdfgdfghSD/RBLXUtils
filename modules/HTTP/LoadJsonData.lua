@@ -1,10 +1,12 @@
+-- TODO: Make this a http module with a bunch of usefull http functions.
+
 --!strict
 
 --[[
 
 	Name: LoadJsonData.lua
 	Author: netheround
-	Description: A simple function that retrieves json data from the web and decodes it into lua table format.
+	Description: A simple function that retrieves json data from the web and returns a lua table representation decoded.
 
 	License: MIT
 	Version: LoadJsonData 1.1
@@ -12,8 +14,6 @@
 ]]--
 
 local HttpService = game:GetService("HttpService")
-
--- Takes an argument as string and it extracts the data from the url and then it decodes the json format to lua table and returns the data.
 
 return function(Url: string): string?
 	local Success: boolean, Result: string? = pcall(function()
