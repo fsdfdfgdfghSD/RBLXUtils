@@ -51,7 +51,7 @@ local GamePassService = { _VERSION = "GamePassService 1.3" }
 
 function GamePassService:PlayerOwnsPass(UserId: number, PassId: number): boolean
 	local Success: boolean = nil
-	local Result: boolean = nil
+	local Result: boolean? | string? = nil
 	local Attempts: number = 1
 
 	repeat
