@@ -7,7 +7,7 @@
 	Description: List of some useful functions to expand the GamePassService service.
 	
 	License: MIT
-	Version: GamePassService 1.3
+	Version: GamePassService 1.3.1
 	
 	API Documentation: {
 	
@@ -47,7 +47,7 @@ local MarketPlaceService = game:GetService("MarketplaceService")
 
 type table = {[any]: any?}
 
-local GamePassService = { _VERSION = "GamePassService 1.3" }
+local GamePassService = { _VERSION = "GamePassService 1.3.1" }
 
 function GamePassService:PlayerOwnsPass(UserId: number, PassId: number): boolean
 	local Success: boolean = nil
