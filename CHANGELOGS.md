@@ -37,6 +37,9 @@
   
 - Added `examples` folder which i will work on it soon.
 
+## 18/11/2023
+
+- Added JumpHeight support for RagdollEngine/RagdollService.lua
 ## 16/11/2023:
 
 - Fixed a type checking bug in MarketplaceService/GamePassService.lua
