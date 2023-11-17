@@ -7,7 +7,7 @@
 	Description: a useless gamepass service with simpler functions to use.
 	
 	License: MIT
-	Version: GamePassService 1.3.1
+	Version: GamePassService 1.3.2
 	
 	API Documentation: {
 	
@@ -47,7 +47,7 @@ local MarketPlaceService = game:GetService("MarketplaceService")
 
 type table = {[any]: any?}
 
-local GamePassService = { _VERSION = "GamePassService 1.3.1" }
+local GamePassService = { _VERSION = "GamePassService 1.3.2" }
 
 function GamePassService:PlayerOwnsPass(UserId: number, PassId: number): boolean | string?
 	local Success: boolean = nil
@@ -82,7 +82,7 @@ function GamePassService:PromptPlayerPass(Player: Player, PassId: number): ()
 	if GamePassService:PlayerOwnsPass(Player.UserId, PassId) == false and GamePassService:GetPassInfo(PassId).IsForSale ~= false then
 		return MarketPlaceService:PromptGamePassPurchase(Player, PassId)
 	else
-		print("Gamepass: \""..PassId.."\" must either be for sale or \""..Player.Name.."\" not own it.")
+		warn("Gamepass: \""..PassId.."\" must either be for sale or \""..Player.Name.."\" not own it.")
 	end
 end
 
