@@ -1,5 +1,3 @@
--- TODO: Make this a http module with a bunch of usefull http functions.
-
 --!strict
 
 --[[
