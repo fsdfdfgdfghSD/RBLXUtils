@@ -1,4 +1,4 @@
-local CountryLocateService = require(game.ReplicatedStorage.OpenSource_Modules.CountryLocateService)
+local CountryLocateService = require("pathToCountryLocateService")
 
 game.Players.PlayerAdded:Connect(function(Player: Player)
 	local MyCountry = CountryLocateService.new({Code = "MyCountryCode", Name = "MyCountryEmoji", Emoji = "MyCountryName"}) -- Creates a new country with custom preferences
