@@ -41,7 +41,12 @@
 
 - Added JumpHeight support for RagdollEngine/RagdollService.lua
 - For the third function in MarketplaceService/GamePassService.lua i changed the print to warn.
+  
 ## 16/11/2023:
 
 - Fixed a type checking bug in MarketplaceService/GamePassService.lua
-> TODOS: You probably seen some todos in my script, im gonna work on them soon.
+
+## 19/11/2023:
+
+- Added examples inside the `examples` folder
+- Fixed 2 bugs in CountryLocateService/CountryLocateService.lua
