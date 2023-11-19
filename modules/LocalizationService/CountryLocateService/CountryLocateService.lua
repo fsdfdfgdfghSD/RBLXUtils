@@ -7,7 +7,7 @@
 	Description: List of some useful functions to expand the Localization service.
 	
 	License: MIT
-	Version: CountryLocateService 1.6
+	Version: CountryLocateService 1.7
 	
 	API Documentation: {
 	
@@ -86,7 +86,7 @@ local Players = game:GetService("Players")
 local Countries = require(script.Countries)
 local Types = require(script.Types)
 
-local CountryLocateService = { _VERSION = "CountryLocateService 1.6" }
+local CountryLocateService = { _VERSION = "CountryLocateService 1.7" }
 CountryLocateService.__index = CountryLocateService
 
 type self = {
@@ -130,7 +130,7 @@ function CountryLocateService:GetCountryForPlayer(Player: Player): string?
 	return Result
 end
 
-function CountryLocateService:GetMyCountry(): string
+function CountryLocateService:GetMyCountry(): string?
 	if RunService:IsServer() then
 		return error("GetMyCountry() cannot be called from the server.")
 	end
@@ -158,12 +158,8 @@ function CountryLocateService:GetCountryCodeByName(CountryName: string): string
 	return error("Country name: \""..CountryName.."\" not found.")
 end
 
-function CountryLocateService:AddCountryToList(Country: self): ()
-	if Country then
-		Countries[self.Code] = {["Name"] = self.Name, ["Emoji"] = self.Emoji}
-	else
-		return error("Please provide the country data: code, name, emoji")
-	end
+function CountryLocateService:AddCountryToList(): ()
+	Countries[self.Code] = {["Name"] = self.Name, ["Emoji"] = self.Emoji}
 end
 
 function CountryLocateService:GetAllCountries(): Types.Country
