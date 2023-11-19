@@ -6,7 +6,7 @@ game.Players.PlayerAdded:Connect(function(Player: Player)
 	MyCountry:AddCountryToList() -- Adds my custom country to the countries list
 	print(CountryLocateService:GetAllCountries()) -- Returns all of the countries
 	
-	--print(CountryLocateService:GetMyCountry()) -- Will error since this is a server code, must be used on the client.
+	--print(CountryLocateService:GetMyCountry()) -- Will error since this is a server script, must be used on the client.
 	
 	print(CountryLocateService:GetCountryCodeByName("Canada")) -- Returns "CA"
 	print(CountryLocateService:GetCountryNameByCode("RO")) -- Returns "Romania"
