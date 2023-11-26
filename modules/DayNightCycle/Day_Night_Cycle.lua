@@ -11,6 +11,20 @@
 	License: MIT
 	Version: Day_Night_Cycle 1.0
 
+	API Documentation: {
+	
+		1. new()
+		
+		-> Configurating your preferences for the day/night cycle effect.
+		
+		Parameters:
+		[NewData: {DayLength: number, CycleTime: number, Minutes_In_A_Day: number}]
+		
+		2. Start()
+		
+		-> Starts the day/night cycle effect with the custom configuration.
+	}
+
 ]]--
 
 local Lighting = game:GetService("Lighting")
