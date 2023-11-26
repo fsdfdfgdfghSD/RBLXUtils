@@ -50,3 +50,7 @@
 
 - Added examples inside the `examples` folder
 - Fixed 2 bugs in CountryLocateService/CountryLocateService.lua
+
+## 26/11/2023:
+
+- Added **DayNightCycle/Day_Night_Cycle.lua** module. + examples.
