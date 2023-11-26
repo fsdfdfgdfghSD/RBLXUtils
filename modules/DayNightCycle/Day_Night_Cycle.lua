@@ -13,7 +13,6 @@
 
 ]]--
 
-
 local Lighting = game:GetService("Lighting")
 
 type self = {
