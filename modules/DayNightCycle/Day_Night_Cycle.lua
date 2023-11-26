@@ -2,6 +2,18 @@
 
 -- TODO: Fix type checking bug + strict mode.
 
+--[[
+
+	Name: Day_Night_Cycle.lua
+	Author: netheround
+	Description: A small module for configuring your day/night cycle system.
+
+	License: MIT
+	Version: Day_Night_Cycle 1.0
+
+]]--
+
+
 local Lighting = game:GetService("Lighting")
 
 type self = {
