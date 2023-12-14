@@ -1,0 +1,10 @@
+[package]
+name = "fsdfdfgdfghsd/rblxutils"
+description = "List of some useful roblox utils i use when making my games."
+version = "1.14.3"
+license = "MIT"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+exclude = ["List.todo"]
+
+[dependencies]
