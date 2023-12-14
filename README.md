@@ -13,3 +13,9 @@
 | [GamePassService](https://github.com/fsdfdfgdfghSD/RBLXUtils/blob/main/modules/MarketplaceService/GamePassService.lua) | List of some useful functions to expand the GamePassService service. | MIT | 1.3.2
 | [RagdollService](https://github.com/fsdfdfgdfghSD/RBLXUtils/blob/main/modules/RagdollEngine/RagdollService.lua) | Nice ragdolling module that works with both R6/R15 | MIT | 1.3
 | [Day_Night_Cycle](https://github.com/fsdfdfgdfghSD/RBLXUtils/tree/main/modules/DayNightCycle/Day_Night_Cycle.lua) | A simple small day/night cycle module. | MIT | 1.0
+
+## Installation:
+
+### Wally
+
+Get the package [RBLXUtils](https://wally.run/package/fsdfdfgdfghsd/rblxutils?version=1.14.3)
