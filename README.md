@@ -16,4 +16,11 @@
 
 ## Installation:
 
-Get the wally package: **[RBLXUtils](https://wally.run/package/fsdfdfgdfghsd/rblxutils?version=1.14.3)**
+### Wally
+
+1. Install wally [here](https://wally.run/install)
+2. Get the wally package: **[RBLXUtils](https://wally.run/package/fsdfdfgdfghsd/rblxutils?version=1.14.3)**
+
+### Roblox Marketplace
+
+1. Get the package here: **[RBLXUtils](https://create.roblox.com/marketplace/asset/15633863552/RBLXUtils)**
