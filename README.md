@@ -16,6 +16,4 @@
 
 ## Installation:
 
-### Wally
-
-Get the package [RBLXUtils](https://wally.run/package/fsdfdfgdfghsd/rblxutils?version=1.14.3)
+Get the wally package: **[RBLXUtils](https://wally.run/package/fsdfdfgdfghsd/rblxutils?version=1.14.3)**
