@@ -54,3 +54,8 @@
 ## 26/11/2023:
 
 - Added **DayNightCycle/Day_Night_Cycle.lua** module. + examples.
+
+## 14/12/2023:
+
+- Fixed one type checking error in **HTTP/LoadJsonDatta.lua**.
+- Published this repo as a wally package, see `wally.toml`
