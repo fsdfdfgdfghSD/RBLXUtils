@@ -1,4 +1,4 @@
-# RBLXUtils announcements
+# RBLXUtils Announcements
 
 ## 17/12/2023:
 
