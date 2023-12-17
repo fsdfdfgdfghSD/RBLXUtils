@@ -59,3 +59,7 @@
 
 - Fixed one type checking error in **HTTP/LoadJsonDatta.lua**.
 - Published this repo as a wally package, see `wally.toml`
+
+## 17/12/2023:
+
+- Added **announcements.md**
